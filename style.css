@@ -1,0 +1,119 @@
+/* --- ZÁKLADNÍ NASTAVENÍ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Velmi tmavá šedá */
+    color: #e0e0e0; /* Světle šedý text */
+    line-height: 1.6;
+}
+
+/* --- PROMĚNNÉ BAREV --- */
+:root {
+    --primary: #ff6600; /* Oranžová (akcent) */
+    --dark: #1e1e1e;    /* Pozadí karet */
+    --light: #ffffff;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- NAVIGACE --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--primary);
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; }
+.color-accent { color: var(--primary); }
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a:hover { color: var(--primary); transition: 0.3s; }
+
+/* --- HLAVNIČKA (HERO) --- */
+header {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1631541909061-71e349d1f203?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
+header p { font-size: 1.2rem; margin-bottom: 30px; max-width: 600px; }
+
+/* --- TLAČÍTKA --- */
+.btn {
+    padding: 10px 30px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover { background-color: #e65c00; transform: scale(1.05); }
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+
+/* --- GALERIE --- */
+.container { padding: 60px 5%; max-width: 1200px; margin: auto; }
+.section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--primary); }
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--dark);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #333;
+}
+
+.card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+.card-image img { width: 100%; height: 200px; object-fit: cover; }
+
+.card-info { padding: 20px; }
+.card-info h3 { margin-bottom: 10px; color: var(--light); }
+
+/* --- SLUŽBY --- */
+.bg-dark { background-color: #0a0a0a; }
+.services-flex { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px; }
+.service-box { flex: 1; min-width: 250px; padding: 20px; }
+.service-box i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+/* --- PATIČKA --- */
+footer { text-align: center; padding: 50px 20px; background-color: #000; border-top: 1px solid #333; }
+footer h2 { margin-bottom: 20px; }
+footer .btn { margin: 20px 0; display: inline-block; }
+.copyright { color: #666; font-size: 0.9rem; margin-top: 30px; }
+
+/* --- MOBILNÍ ÚPRAVY --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 2rem; }
+    .nav-links { display: none; } /* Zjednodušení pro mobil: skryté menu */
+    .logo { margin: auto; }
+}
