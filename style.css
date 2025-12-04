@@ -116,4 +116,68 @@ footer .btn { margin: 20px 0; display: inline-block; }
     header h1 { font-size: 2rem; }
     .nav-links { display: none; } /* Zjednodušení pro mobil: skryté menu */
     .logo { margin: auto; }
+
+/* --- NOVÉ STYLY PRO DETAIL PRODUKTU --- */
+
+/* Odsazení horní části, aby nebyla pod menu */
+.product-detail {
+    margin-top: 80px; 
+}
+
+/* Rozvržení detailu - obrázek vlevo, text vpravo */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dva sloupce vedle sebe */
+    gap: 40px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+/* Styl pro velký obrázek */
+.detail-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--primary); /* Oranžový rámeček */
+}
+
+/* Styly pro texty v detailu */
+.detail-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light);
+    margin-bottom: 20px;
+}
+
+.description {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.detail-info ul {
+    margin-bottom: 30px;
+    list-style: disc; /* Odrážky */
+    margin-left: 20px;
+}
+.detail-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Úprava pro mobily - detail se naskládá pod sebe */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr; /* Jeden sloupec */
+    }
+}
+
+/* DŮLEŽITÉ: Ujištění, že karta jako odkaz vypadá stále stejně */
+a.card {
+    display: block; /* Aby se odkaz choval jako blok (čtverec) */
+    text-decoration: none; /* Žádné podtržení */
+    color: inherit; /* Barva textu se nezmění na modrou */
 }
